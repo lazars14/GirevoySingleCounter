@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Threading;
 
@@ -19,11 +21,13 @@ namespace GirevoySingleCounter
         public CounterWindow(MainWindow mainWindow, int minutes)
         {
             InitializeComponent();
-            this.DataContext = counter;
+            main_window = mainWindow;
+
             counter = 0;
+            counter_txtb.Text = counter.ToString();
+
             time = minutes * 60; // time in seconds
 
-            main_window = mainWindow;
             setDispatchTimer(minutes);
             this.KeyDown += HandleKeyPress;
         }
@@ -33,6 +37,8 @@ namespace GirevoySingleCounter
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Tick += Timer_Tick;
+
+            setTime();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -40,18 +46,27 @@ namespace GirevoySingleCounter
             if(time > 0)
             {
                 time--;
-                if ((time / 60) < 10)
-                {
-                    timer_txtb.Text = string.Format("0{0}:{1}", time / 60, time % 60);
-                }
-                else
-                {
-                    timer_txtb.Text = string.Format("{0}:{1}", time / 60, time % 60);
-                }
+                setTime();
             }
             else
             {
                 timer.Stop();
+            }
+        }
+
+        private void setTime()
+        {
+            if ((time / 60) < 10)
+            {
+                timer_txtb.Text = string.Format("0{0}:{1}", time / 60, time % 60);
+            }
+            if(time % 60 == 0)
+            {
+                timer_txtb.Text = string.Format("0{0}:{1}0", time / 60, time % 60);
+            }
+            else
+            {
+                timer_txtb.Text = string.Format("{0}:{1}", time / 60, time % 60);
             }
         }
 
@@ -64,9 +79,11 @@ namespace GirevoySingleCounter
                     break;
                 case Key.Space:
                     ++counter;
+                    counter_txtb.Text = counter.ToString();
                     break;
                 case Key.Subtract:
                     --counter;
+                    counter_txtb.Text = counter.ToString();
                     break;
                 case Key.Escape:
                     main_window.Show();

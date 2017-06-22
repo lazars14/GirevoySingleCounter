@@ -5,13 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GirevoySingleCounter"
         mc:Ignorable="d"
-        Title="Girevoy single counter" Height="190.909" Width="382.812">
+        Title="Girevoy single counter" Height="205.824" Width="382.812" Icon="/GirevoySingleCounter;component/images/girevikIcon.png">
     <Grid>
         <Label x:Name="new_interval_lbl" Content="Enter new interval time (minutes):" HorizontalAlignment="Left" Margin="26,35,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="new_interval_txtb" HorizontalAlignment="Left" Height="26" Margin="213,35,0,0" TextWrapping="Wrap" Text="{Binding Path=minutes, ValidatesOnExceptions=True}"  VerticalAlignment="Top" Width="126"/>
-        <Button x:Name="new_interval_btn" Content="OK" HorizontalAlignment="Left" Height="32" Margin="124,118,0,0" VerticalAlignment="Top" Width="117" Click="new_interval_btn_Click"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="20" Margin="213,66,0,0" TextWrapping="Wrap" Text="{Binding ElementName=minutes,
-Path=(Validation.Errors).CurrentItem.ErrorContent}" VerticalAlignment="Top" Width="152"/>
+        <TextBox x:Name="new_interval_txtb" HorizontalAlignment="Left" Height="26" Margin="213,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="20" Margin="213,66,0,0" TextWrapping="Wrap" Text="Input numbers!" VerticalAlignment="Top" Width="152" Foreground="Red"/>
 
+        <Button x:Name="new_interval_btn" Content="OK" HorizontalAlignment="Left" Height="32" Margin="124,116,0,0" VerticalAlignment="Top" Width="117" Click="new_interval_btn_Click"/>
     </Grid>
 </Window>

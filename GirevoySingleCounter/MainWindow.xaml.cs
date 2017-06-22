@@ -16,6 +16,8 @@ namespace GirevoySingleCounter
             InitializeComponent();
             minutes = 0;
             KeyDown += HandleKeyPress;
+
+            new_interval_txtb.Focus();
         }
 
         private void new_interval_btn_Click(object sender, RoutedEventArgs e)

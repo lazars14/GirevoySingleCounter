@@ -56,13 +56,17 @@ namespace GirevoySingleCounter
 
         private void setTime()
         {
-            if ((time / 60) < 10)
+            if ((time / 60) < 10 && time % 60 < 10)
+            {
+                timer_txtb.Text = string.Format("0{0}:0{1}", time / 60, time % 60);
+            }
+            else if ((time / 60) < 10)
             {
                 timer_txtb.Text = string.Format("0{0}:{1}", time / 60, time % 60);
             }
-            if(time % 60 == 0)
+            else if (time % 60 < 10)
             {
-                timer_txtb.Text = string.Format("0{0}:{1}0", time / 60, time % 60);
+                timer_txtb.Text = string.Format("{0}:0{1}", time / 60, time % 60);
             }
             else
             {

@@ -10,7 +10,7 @@
         WindowStartupLocation="CenterScreen" WindowState="Maximized"
         Background="Blue">
     <Grid>
-        <TextBlock x:Name="timer_txtb" Height="246" TextWrapping="Wrap" Width="591" FontSize="200" TextAlignment="Center" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock x:Name="counter_txtb" HorizontalAlignment="Center" Height="182" Margin="173,0,115,100" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="412" FontSize="150" TextAlignment="Center" Foreground="White"/>
+        <TextBlock x:Name="timer_txtb" TextWrapping="Wrap" FontSize="250" TextAlignment="Center" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,75,0,0"/>
+        <TextBlock x:Name="counter_txtb" HorizontalAlignment="Center" Margin="0,0,0,75" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="350" TextAlignment="Center" Foreground="White"/>
     </Grid>
 </Window>

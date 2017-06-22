@@ -1,0 +1,16 @@
+﻿<Window x:Class="GirevoySingleCounter.CounterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GirevoySingleCounter"
+        mc:Ignorable="d"
+        Title="Girevoy single counter" Height="400" Width="600"
+        WindowStyle="None" ResizeMode="NoResize"  
+        WindowStartupLocation="CenterScreen" WindowState="Maximized"
+        Background="Blue">
+    <Grid>
+        <TextBlock x:Name="timer_txtb" HorizontalAlignment="Left" Height="128" Margin="66,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="457" FontSize="100" TextAlignment="Center" Foreground="White"/>
+        <TextBlock x:Name="counter_txtb" HorizontalAlignment="Left" Height="182" Margin="88,188,0,0" TextWrapping="Wrap" Text="{Binding Path=counter}" VerticalAlignment="Top" Width="412" FontSize="150" TextAlignment="Center" Foreground="White"/>
+    </Grid>
+</Window>

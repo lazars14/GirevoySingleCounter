@@ -14,11 +14,14 @@ namespace GirevoySingleCounter
         private DispatcherTimer timer { get; set; }
 
         private int counter { get; set; }
+        private int time { get; set; }
 
         public CounterWindow(MainWindow mainWindow, int minutes)
         {
             InitializeComponent();
+            this.DataContext = counter;
             counter = 0;
+            time = minutes * 60; // time in seconds
 
             main_window = mainWindow;
             setDispatchTimer(minutes);
@@ -28,7 +31,28 @@ namespace GirevoySingleCounter
         private void setDispatchTimer(int minutes)
         {
             timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, minutes, 0);
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Tick += Timer_Tick;
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if(time > 0)
+            {
+                time--;
+                if ((time / 60) < 10)
+                {
+                    timer_txtb.Text = string.Format("0{0}:{1}", time / 60, time % 60);
+                }
+                else
+                {
+                    timer_txtb.Text = string.Format("{0}:{1}", time / 60, time % 60);
+                }
+            }
+            else
+            {
+                timer.Stop();
+            }
         }
 
         private void HandleKeyPress(object sender, KeyEventArgs e)

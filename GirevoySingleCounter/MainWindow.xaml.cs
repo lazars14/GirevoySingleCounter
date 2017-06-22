@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 
 namespace GirevoySingleCounter
 {
@@ -14,6 +15,7 @@ namespace GirevoySingleCounter
         {
             InitializeComponent();
             minutes = 0;
+            KeyDown += HandleKeyPress;
         }
 
         private void new_interval_btn_Click(object sender, RoutedEventArgs e)
@@ -32,6 +34,14 @@ namespace GirevoySingleCounter
             CounterWindow cw = new CounterWindow(this, minutes);
             cw.Show();
             this.Hide();
+        }
+
+        private void HandleKeyPress(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Return)
+            {
+                new_interval_btn_Click(null, null);
+            }
         }
     }
 }

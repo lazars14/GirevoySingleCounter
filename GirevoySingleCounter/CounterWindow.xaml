@@ -11,6 +11,6 @@
         Background="Blue">
     <Grid>
         <TextBlock x:Name="timer_txtb" HorizontalAlignment="Left" Height="128" Margin="66,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="457" FontSize="100" TextAlignment="Center" Foreground="White"/>
-        <TextBlock x:Name="counter_txtb" HorizontalAlignment="Left" Height="182" Margin="88,188,0,0" TextWrapping="Wrap" Text="{Binding Path=counter}" VerticalAlignment="Top" Width="412" FontSize="150" TextAlignment="Center" Foreground="White"/>
+        <TextBlock x:Name="counter_txtb" HorizontalAlignment="Left" Height="182" Margin="88,188,0,0" TextWrapping="Wrap" Text="{Binding Path=counter, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="412" FontSize="100" TextAlignment="Center" Foreground="White"/>
     </Grid>
 </Window>

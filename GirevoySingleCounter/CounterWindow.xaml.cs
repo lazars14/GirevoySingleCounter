@@ -1,4 +1,7 @@
 ﻿using System;
+using System.IO;
+using System.Media;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -51,7 +54,23 @@ namespace GirevoySingleCounter
             else
             {
                 timer.Stop();
+                playWhistle();
             }
+        }
+
+        private void playWhistle()
+        {
+            try
+            {
+                SoundPlayer player = new SoundPlayer(Properties.Resources.whistle2); 
+                player.Load();
+                player.Play();
+            }
+            catch(FileNotFoundException e)
+            {
+                MessageBox.Show("Somebody has deleted the whistle sound!");
+            }
+
         }
 
         private void setTime()
@@ -80,6 +99,7 @@ namespace GirevoySingleCounter
             {
                 case Key.Return:
                     timer.Start();
+                    playWhistle();
                     break;
                 case Key.Space:
                     ++counter;

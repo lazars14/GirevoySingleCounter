@@ -5,12 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GirevoySingleCounter"
         mc:Ignorable="d"
-        Title="Girevoy single counter" Height="205.824" Width="382.812" Icon="/GirevoySingleCounter;component/images/girevikIcon.png">
+        Title="Girevoy single counter" Height="359.158" Width="382.812" Icon="/GirevoySingleCounter;component/images/girevikIcon.png">
     <Grid>
         <Label x:Name="new_interval_lbl" Content="Enter new interval time (minutes):" HorizontalAlignment="Left" Margin="26,35,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="new_interval_txtb" HorizontalAlignment="Left" Height="26" Margin="213,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="20" Margin="213,66,0,0" TextWrapping="Wrap" Text="Input numbers!" VerticalAlignment="Top" Width="152" Foreground="Red"/>
 
         <Button x:Name="new_interval_btn" Content="OK" HorizontalAlignment="Left" Height="32" Margin="124,116,0,0" VerticalAlignment="Top" Width="117" Click="new_interval_btn_Click"/>
+
+        <Label x:Name="instructions_lbl" Content="Instructions:" HorizontalAlignment="Left" Height="25" Margin="26,181,0,0" VerticalAlignment="Top" Width="313"/>
+        <Label x:Name="start_lbl" Content="Enter -" HorizontalAlignment="Left" Height="28" Margin="26,206,0,0" VerticalAlignment="Top" Width="60" FontWeight="Bold"/>
+        <Label x:Name="start_lbl_2" Content="    start timer" HorizontalAlignment="Left" Height="28" Margin="56,206,0,0" VerticalAlignment="Top" Width="185"/>
+        <Label x:Name="counter_increase_lbl" Content="Space -" HorizontalAlignment="Left" Height="28" Margin="26,234,0,0" VerticalAlignment="Top" Width="52" FontWeight="Bold"/>
+        <Label x:Name="counter_increase_lbl_2" Content="   increase count" HorizontalAlignment="Left" Height="28" Margin="62,234,0,0" VerticalAlignment="Top" Width="277"/>
+        <Label x:Name="counter_decrease_lbl" Content="Minus -" HorizontalAlignment="Left" Height="28" Margin="26,262,0,0" VerticalAlignment="Top" Width="52" FontWeight="Bold"/>
+        <Label x:Name="counter_decrease_lbl_2" Content="   decrease count" HorizontalAlignment="Left" Height="28" Margin="62,262,0,0" VerticalAlignment="Top" Width="277"/>
+        <Label x:Name="exit_lbl" Content="Escape -" HorizontalAlignment="Left" Height="28" Margin="26,290,0,0" VerticalAlignment="Top" Width="60" FontWeight="Bold"/>
+        <Label x:Name="exit_lbl_2" Content="   exit interval" HorizontalAlignment="Left" Height="28" Margin="68,290,0,0" VerticalAlignment="Top" Width="271"/>
     </Grid>
 </Window>
